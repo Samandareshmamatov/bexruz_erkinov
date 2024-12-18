@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth focus:scroll-auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bexruz Erkinov</title>
+    <meta name="description" content="Bexruz Erkinov, a dedicated mathematics teacher helping students excel.">
+    <meta name="keywords" content="Bexruz Erkinov, Mathematics teacher, Matematika o'qituvchisi, Education, Tutoring, Math lessons">
+    <meta name="author" content="Bexruz Erkinov">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="./images/logo.png" type="image/png">
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Light mode styles */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --nav-bg: #f3f4f6;
+            --nav-text: #1f2937;
+            --card-bg: #ffffff;
+            --link-color: #f59e0b;
+            --yellow-btn: #f59e0b;
+            --yellow-btn-hover: #d97706;
+            --footer-bg: #f3f4f6;
+            --footer-text: #1f2937; /* Darker text for footer in light mode */
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1f2937;
+            --bg-secondary: #111827;
+            --text-primary: #f3f4f6;
+            --text-secondary: #d1d5db;
+            --nav-bg: #111827;
+            --nav-text: #f3f4f6;
+            --card-bg: #374151;
+            --link-color: #fbbf24;
+            --yellow-btn: #d97706;
+            --yellow-btn-hover: #f59e0b;
+            --footer-bg: #1f2937;
+            --footer-text: #d1d5db; /* Lighter text for footer in dark mode */
+            --schedule-bg: #2d3748; /* Different background for schedule in dark mode */
+            --resources-bg: #111827; /* Correct background for resources section in dark mode */
+        }
+
+        /* Override Tailwind classes with CSS variables */
+        .bg-gray-100 {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        .bg-white {
+            background-color: var(--bg-primary) !important;
+        }
+
+        .bg-gray-800 {
+            background-color: var(--nav-bg) !important;
+        }
+
+        .text-gray-800 {
+            color: var(--text-primary) !important;
+        }
+
+        .text-gray-600, .text-gray-700 {
+            color: var(--text-secondary) !important;
+        }
+
+        .bg-yellow-500 {
+            background-color: var(--yellow-btn) !important;
+        }
+
+        .hover\:bg-yellow-600:hover {
+            background-color: var(--yellow-btn-hover) !important;
+        }
+
+        .text-yellow-500, .hover\:text-yellow-400:hover {
+            color: var(--link-color) !important;
+        }
+
+        /* Additional theme-specific styles */
+        .swiper-slide > div {
+            background-color: var(--card-bg) !important;
+            border: 1px solid var(--text-secondary);
+        }
+
+        nav {
+            background-color: var(--nav-bg) !important;
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav a, nav select, nav button {
+            color: var(--nav-text) !important;
+        }
+
+        footer {
+            background-color: var(--footer-bg) !important;
+            color: var(--footer-text) !important;
+        }
+
+        .schedule {
+            background-color: var(--schedule-bg) !important;
+        }
+
+        .resources {
+            background-color: var(--resources-bg) !important;
+        }
+
+        /* Smooth transition for theme changes */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Box shadow on scroll for header */
+        .scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="font-roboto relative transition-colors duration-300" data-theme="light">
+    <!-- Header Section -->
+    <header class="text-white shadow-md scrolled">
+        <nav class="fixed top-0 w-full z-10">
+            <div class="mx-auto flex justify-between items-center py-4 px-6">
+                <div class="flex items-center">
+                    <a href="./index.html">
+                        <img src="./images/logo.png" alt="Website logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <ul class="flex space-x-6 items-center">
+                        <li>
+                            <a href="#home" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_home">
+                                Bosh sahifa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_about">
+                                Men haqimda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#service" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_services">
+                                Xizmatlar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#statistics" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_statistics">
+                                Statistika
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#resources" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_resources">
+                                Resurslar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#schedule" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_schedule">
+                                Dars jadvali
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_contact">
+                                Bog'lanish
+                            </a>
+                        </li>
+                        <li>
+                            <button id="themeToggle" class="text-white hover:text-yellow-400 focus:outline-none">
+                                <i class='bx bx-sun text-2xl' id="themeIcon"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <select id="languageSelector" class="bg-transparent text-white hover:text-yellow-400 font-medium uppercase cursor-pointer border-none focus:outline-none">
+                                <option value="uz">O'zbek</option>
+                                <option value="en">English</option>
+                                <option value="ru">Русский</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button id="menuToggle" class="text-yellow-400 focus:outline-none">
+                        <i class='bx bx-menu text-3xl'></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="hidden flex-col items-center bg-gray-800 text-white space-y-3 py-4">
+                <ul class="flex flex-col space-y-3">
+                    <li>
+                        <a href="#home" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_home">
+                            Bosh sahifa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_about">
+                            Men haqimda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#service" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_services">
+                            Xizmatlar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#statistics" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_statistics">
+                            Statistika
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#resources" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_resources">
+                            Resurslar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#schedule" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_schedule">
+                            Dars jadvali
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-yellow-400 font-medium uppercase" data-lang-key="nav_contact">
+                            Bog'lanish
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex space-x-4 mt-4">
+                    <button id="themeToggle" class="text-white hover:text-yellow-400 focus:outline-none">
+                        <i class='bx bx-sun text-2xl' id="themeIcon"></i>
+                    </button>
+                    <select id="languageSelector" class="bg-transparent text-white hover:text-yellow-400 font-medium uppercase cursor-pointer border-none focus:outline-none">
+                        <option value="uz">O'zbek</option>
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="pt-[80px]">
+        <!-- home Section -->
+        <section id="home" class="bg-gray-100 py-12">
+            <div class="container mx-auto flex flex-col items-center text-center px-6">
+                <img src="./images/teacher.jpg" style="object-fit: cover; object-position: 100% 100%;" alt="Teacher"
+                    class="w-48 h-48 rounded-full object-cover shadow-lg mb-6">
+                <h1 class="text-3xl font-bold mb-4 text-gray-800" data-lang-key="greeting">
+                    "Assalomu alaykum! Men Erkinov Bexruz - matematika o'qituvchisiman."
+                </h1>
+                <p class="text-gray-600 text-lg max-w-2xl mb-6 leading-relaxed" data-lang-key="intro_text">
+                    Maktabda matematika fanidan dars beraman va o'quvchilarimni muvaffaqiyatga erishish uchun
+                    tayyorlashga intilaman. <br>
+                    <span class="text-yellow-600 font-semibold" data-lang-key="motto">"Har bir o'quvchi o'z imkoniyatlarini topishi
+                        mumkin!"</span>
+                </p>
+                <button
+                    class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-medium transition border-none"
+                    id="contact__btn" data-lang-key="contact_btn">
+                    Men bilan bog'lanish
+                </button>
+            </div>
+        </section>
+        <!-- About me section -->
+        <section id="about" class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800" data-lang-key="about_title">Men haqimda</h2>
+                    <p class="text-gray-600 mt-2" data-lang-key="about_subtitle">Mening ta'lim va tajribam haqida</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-gray-700 leading-relaxed">
+                    <p data-lang-key="about_text">
+                        Assalomu alaykum! Men Erkinov Bexruz, 2 yillik tajribaga ega matematik o'qituvchiman. O'z
+                        ishiga sadoqatli va matematika fani orqali o'quvchilarimning bilimlarini yanada oshirishga
+                        harakat qilaman. Men uchun o'qituvchilik — bu nafaqat dars berish, balki o'quvchilarga ulkan
+                        bilim manbasiga aylanishi uchun yordam berishdir. Matematika, mening fikrimcha, faqat
+                        hisob-kitoblar bilan chegaralanmaydi, balki muammolarni hal qilish, mantiqiy fikrlashni
+                        rivojlantirish va ijodiy yondashuvni talab qiladi. Bu fanni o'rgatish jarayonida men har doim
+                        o'quvchilarning shaxsiy ehtiyojlarini va qiziqishlarini inobatga olishga harakat qilaman.
+                        <br> <br>
+                        Men O'zbekiston-Finlandiya pedagogika instituti Aniq va amaliy fanlar fakulьteti Matematika
+                        informatika yo'nalishi bo'yicha ta'lim oldim va matematika
+                        o'qituvchisi bo'lishni orzu qildim. O'qish davrida men nafaqat matematikani chuqur o'rgandim,
+                        balki o'qituvchilik faoliyatiga tayyorgarlik ko'rishda ko'plab metodikalarni o'rgandim. Ta'lim
+                        olish jarayonida o'qituvchilikning nafaqat nazariy, balki amaliy tomonlarini ham yaxshi
+                        o'zlashtirdim. Ushbu bilimlarimni maktabda ishlashda qo'llashni boshladim va qisqa vaqt ichida
+                        o'quvchilarimning muvaffaqiyatlarini ko'rish men uchun eng katta rag'bat bo'ldi.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Services section -->
+        <section id="service" class="py-12 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800" data-lang-key="services_title">Mening xizmatlarim</h2>
+                    <p class="text-gray-600 mt-2" data-lang-key="services_subtitle">O'quvchilar uchun taqdim etiladigan xizmatlar</p>
+                </div>
+                <!-- Swiper -->
+                <div class="w-full h-[550px] mt-2.5 mx-auto flex items-center">
+                    <div class="swiper mySwiper relative">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="w-[60%] h-[500px] bg-white rounded-lg shadow-md overflow-hidden">
+                                    <img src="./images/image1.jpg" alt="Katta sinf darslari"
+                                        class="w-full h-[350px] object-cover rounded-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-lang-key="service1_title">Dars jarayoni</h3>
+                                        <p class="text-gray-600 mb-4" data-lang-key="service1_text">9-11-sinf o'quvchilari uchun matematika darslari.</p>
+                                        <a href="#home"
+                                            class="text-yellow-500 hover:underline font-medium" data-lang-key="service1_link">Bog'lanish</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-[60%] h-[500px] bg-white rounded-lg shadow-md overflow-hidden">
+                                    <img src="./images/image2.jpg" alt="Imtihonlarga tayyorlash"
+                                        class="w-full h-[350px] object-cover rounded-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-lang-key="service2_title">Imtihonlarga tayyorlash</h3>
+                                        <p class="text-gray-600 mb-4" data-lang-key="service2_text">Yakuni imtihon va oliy o'quv yurtlariga tayyorgarlik.</p>
+                                        <button id="moreInfo__btn"
+                                            class="text-yellow-500 hover:underline font-medium" data-lang-key="service2_link">Batafsil</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-[60%] h-[500px] bg-white rounded-lg shadow-md overflow-hidden">
+                                    <img src="./images/image3.jpg" alt="Olimpiadaga tayyorlash"
+                                        class="w-full h-[350px] object-cover rounded-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-lang-key="service3_title">Olimpiadaga tayyorlash</h3>
+                                        <p class="text-gray-600 mb-4" data-lang-key="service3_text">Matematika olimpiadalariga tayyorgarlik mashg'ulotlari.</p>
+                                        <a href="#contact" class="text-yellow-500 hover:underline font-medium" data-lang-key="service3_link">Ko'proq bilish</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-[60%] h-[500px] bg-white rounded-lg shadow-md overflow-hidden">
+                                    <img src="./images/image4.jpg" alt="Kichik guruh darslari"
+                                        class="w-full h-[350px] object-cover rounded-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-lang-key="service4_title">Kichik guruh darslari</h3>
+                                        <p class="text-gray-600 mb-4" data-lang-key="service4_text">Matematika darslari kichik guruhlarda.</p>
+                                        <a href="#contact" class="text-yellow-500 hover:underline font-medium" data-lang-key="service4_link">Ko'proq bilish</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-[60%] h-[500px] bg-white rounded-lg shadow-md overflow-hidden">
+                                    <img src="./images/image5.jpg" alt="Online darslar"
+                                        class="w-full h-[350px] object-cover rounded-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-lang-key="service5_title">Online darslar</h3>
+                                        <p class="text-gray-600 mb-4" data-lang-key="service5_text">Online platformada matematika darslari.</p>
+                                        <a href="#contact" class="text-yellow-500 hover:underline font-medium" data-lang-key="service5_link">Ko'proq bilish</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-next absolute top-1/2 transform -translate-y-1/2 right-0 text-yellow-500">
+                        </div>
+                        <div
+                            class="swiper-button-prev absolute top-1/2 transform -translate-y-1/2 left-0 text-yellow-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Statistics Section -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 schedule" id="statistics">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-lang-key="stats_title">Yutuqlar va statistika</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200">
+                        <i class='bx bx-user-voice text-4xl text-yellow-500 mb-4'></i>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800" data-lang-key="stats_students">100+</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-lang-key="stats_students_text">O'quvchilar</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200">
+                        <i class='bx bx-calendar-check text-4xl text-yellow-500 mb-4'></i>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800" data-lang-key="stats_experience">2+</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-lang-key="stats_experience_text">Yillik tajriba</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200">
+                        <i class='bx bx-trophy text-4xl text-yellow-500 mb-4'></i>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800" data-lang-key="stats_olympiad">5+</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-lang-key="stats_olympiad_text">Olimpiada g'oliblari</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200">
+                        <i class='bx bx-certification text-4xl text-yellow-500 mb-4'></i>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800" data-lang-key="stats_success">90+ %</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-lang-key="stats_success_text">Muvaffaqiyat darajasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Resources Section -->
+        <section class="py-16 resources" id="resources">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-lang-key="resources_title">Foydali resurslar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Video Darslar -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-200">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/png" alt="Video darslar" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <i class='bx bx-play-circle text-6xl text-white'></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800" data-lang-key="resources_videos">Video darslar</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4" data-lang-key="resources_videos_desc">Har xil mavzularda video darslar to'plami</p>
+                            <a href="#" class="text-yellow-500 hover:text-yellow-600 flex items-center">
+                                <span data-lang-key="learn_more">Batafsil</span>
+                                <i class='bx bx-chevron-right ml-1'></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Test materiallar -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-200">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/png" alt="Test materiallari" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <i class='bx bx-file text-6xl text-white'></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800" data-lang-key="resources_tests">Test materiallari</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4" data-lang-key="resources_tests_desc">DTM va Olimpiada testlari to'plami</p>
+                            <a href="#" class="text-yellow-500 hover:text-yellow-600 flex items-center">
+                                <span data-lang-key="learn_more">Batafsil</span>
+                                <i class='bx bx-chevron-right ml-1'></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Qo'shimcha materiallar -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-200">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/png" alt="Qo'shimcha materiallar" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <i class='bx bx-book text-6xl text-white'></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800" data-lang-key="resources_materials">Qo'shimcha materiallar</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4" data-lang-key="resources_materials_desc">Darslik va qo'llanmalar to'plami</p>
+                            <a href="#" class="text-yellow-500 hover:text-yellow-600 flex items-center">
+                                <span data-lang-key="learn_more">Batafsil</span>
+                                <i class='bx bx-chevron-right ml-1'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Schedule Section -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 schedule" id="schedule">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-lang-key="schedule_title">Dars jadvali</h2>
+                <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                    <table class="min-w-full">
+                        <thead class="bg-yellow-500 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left" data-lang-key="schedule_time">Vaqt</th>
+                                <th class="py-3 px-4 text-left" data-lang-key="schedule_class1">Sinf 1</th>
+                                <th class="py-3 px-4 text-left" data-lang-key="schedule_class2">Sinf 2</th>
+                                <th class="py-3 px-4 text-left" data-lang-key="schedule_class3">Sinf 3</th>
+                                <th class="py-3 px-4 text-left" data-lang-key="schedule_class4">Sinf 4</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-gray-800">
+                                <td class="py-3 px-4" data-lang-key="schedule_time1">09:00 - 10:30</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class1_1">6-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class2_1">7-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class3_1">10-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class4_1">11-sinf</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-gray-800">
+                                <td class="py-3 px-4" data-lang-key="schedule_time2">11:00 - 12:30</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class1_2">7-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class2_2">8-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class3_2">11-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class4_2">6-sinf</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-gray-800">
+                                <td class="py-3 px-4" data-lang-key="schedule_time3">14:00 - 15:30</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class1_3">8-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class2_3">9-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class3_3">6-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class4_3">7-sinf</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-gray-800">
+                                <td class="py-3 px-4" data-lang-key="schedule_time4">16:00 - 17:30</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class1_4">9-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class2_4">10-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class3_4">7-sinf</td>
+                                <td class="py-3 px-4" data-lang-key="schedule_class4_4">8-sinf</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- footer section -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6" id="contact">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4" data-lang-key="footer_about_title">Men haqimda</h3>
+                    <p class="mb-4" data-lang-key="footer_about_text">Matematika o'qituvchisi sifatida men o'quvchilarning bilimlarini oshirishga va ularning kelajakdagi muvaffaqiyatlariga hissa qo'shishga intilyapman.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/bekh_me_" target="_blank" class="hover:text-yellow-400 text-2xl">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://t.me/Behruz_Erkinov_1" target="_blank" class="hover:text-yellow-400 text-2xl">
+                            <i class='bx bxl-telegram'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4" data-lang-key="quick_links">Tezkor havolalar</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#home" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_home">Bosh sahifa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_about">Men haqimda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#service" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_services">Xizmatlar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#statistics" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_statistics">Statistika</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#resources" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_resources">Resurslar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#schedule" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_schedule">Dars jadvali</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-yellow-400 flex items-center">
+                                <i class='bx bx-chevron-right mr-2'></i>
+                                <span data-lang-key="nav_contact">Bog'lanish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4" data-lang-key="contact_info">Bog'lanish ma'lumotlari</h3>
+                    <div class="space-y-3">
+                        <p class="flex items-center ">
+                            <i class='bx bx-envelope mr-2'></i>
+                            <span data-lang-key="email_label">Email: </span>
+                            <a href="mailto:berkinov2211@gmail.com" class="hover:text-yellow-400 ml-1">berkinov2211@gmail.com</a>
+                        </p>
+                        <p class="flex items-center ">
+                            <i class='bx bx-phone mr-2'></i>
+                            <span data-lang-key="phone_label">Telefon: </span>
+                            <a href="tel:+998902822312" class="hover:text-yellow-400 ml-1">+998 90 282 23 12</a>
+                        </p>
+                        <p class="flex items-center ">
+                            <i class='bx bx-time mr-2'></i>
+                            <span data-lang-key="working_hours">Ish vaqti: </span>
+                            <span class="ml-1" data-lang-key="work_time">9:00 - 18:00</span>
+                        </p>
+                        <p class="flex items-center ">
+                            <i class='bx bx-calendar mr-2'></i>
+                            <span data-lang-key="working_days">Ish kunlari: </span>
+                            <span class="ml-1" data-lang-key="work_days">Dushanba - Shanba</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4" data-lang-key="newsletter_title">Yangiliklardan xabardor bo'ling</h3>
+                    <p class="mb-4" data-lang-key="newsletter_text">Yangi darslar va maxsus takliflar haqida birinchilardan bo'lib xabardor bo'ling</p>
+                    <form class="space-y-3">
+                        <div class="flex">
+                            <input type="email" placeholder="Email manzilingiz" data-lang-key="email_placeholder"
+                                class="bg-gray-700 text-white px-4 py-2 rounded-l-lg focus:outline-none flex-grow">
+                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-r-lg transition">
+                                <i class='bx bx-send'></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="">
+                    <span data-lang-key="copyright"> 2024 Erkinov Bexruz. Barcha huquqlar himoyalangan</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body>
+
+</html>
