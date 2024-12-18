@@ -14,7 +14,7 @@ var swiper = new Swiper(".mySwiper", {
 let contactBtn = document.getElementById('contact__btn')
 
 contactBtn.addEventListener('click', () => {
-    alert(`Men bilan bog'lanish uchun: \n +998 99 118 05 23`)
+    alert(`Men bilan bog'lanish uchun: \n +998 90 282 23 12`);
 })
 
 let moreInfoBtn = document.getElementById('moreInfo__btn')
